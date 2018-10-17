@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+html {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* registry pattern */
+
+form {
+  font-size: 20px;
+}
+
+form h1 {
+  background-color: #3288fa;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+form input, select {
+  border-radius: 5px;
+  border: 1px solid #3288fa;
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+select {
+  width: 100px;
+}
+
+/* tables layout */
+
+table {
+  text-align: center;
+  width: 85%;
+  min-width: 750px;
+  font-size: 25px;
+}
+
+th {
+  padding: 8px;
+  background-color: #3288fa;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+tr:nth-child(even):hover, tr:nth-child(odd):hover {
+  background-color: #f9ff80;
+}
+
+tr:nth-child(odd) {
+  background-color: #a6ccff;
+}
+
+td {
+  padding: 5px;
+}
+
+@media(max-width: 800px) {
+  article {
+    overflow-x: auto;
+  }
+}
+
+@media(min-widht: 800px) {
+  table {
+    font-size: 10px;
+  }
+}
+
+/* pages layout */
+
+.menu {
+  width: 100%;
+  height: 57px;
+  background-color: #3288fa;
+  font-size: 25px;
+  font-family: "Oswald";
+}
+
+.menu ul {
+  list-style: none;
+  position: relative;
+  text-align: center;
+}
+
+.menu ul li {
+  width: 150px;
+  float: left;
+}
+
+/* .menu ul li:hover ul {
+  width: 150px;
+  display: block;
+  margin-top: 50px;
+} */
+
+.menu a {
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #3288fa;
+}
+
+.menu a:hover {
+  color: #3288fa;
+  background-color: #ffffff;
+}
+
+.menu ul ul li a {
+  background-color: #0052bf;
+}
+
+.menu ul ul li a:hover {
+  color: #0052bf;
+}
+
+.menu ul ul {
+  position: absolute;
+  visibility: hidden;
+}
+
+.menu ul ul li {
+  float: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+.menu ul li:hover ul {
+  visibility: visible;
+}
+
+label[for="btnmenu"] {
+  padding: 5px;
+  background-color: #3288fa;
+  color: #ffffff;
+  font-family: "Oswald";
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#btnmenu {
+  display: none;
+}
+
+label[for="btnmenu"] {
+  display: none;
+}
+
+@media(max-width: 800px) {
+  label[for="btnmenu"] {
+    display: block;
+  }
+
+  #btnmenu:checked ~ .menu {
+    margin-left: 0;
+  }
+
+  .menu {
+    margin-top: 5px;
+    margin-left: -100%;
+    transition: all .4s;
+  }
+
+  .menu ul li {
+    width: 100%;
+    float: none;
+  }
+
+  .menu ul ul {
+    position: static;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .4s;
+    background-color: #3288fa;
+  }
+
+  .menu ul li:hover ul {
+    height: auto;
+    max-height: 200px;
+  }
+}
+
+#logout {
+  float: right;
+}
+
+.homescreen {
+  margin: 20px;
+  padding: 50px 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3288fa;
+  text-align: center;
+}
+
+/* Login */
+
+.tela {
+  background-color: rgba(249, 252, 54, .9);
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 7px #6a6a6a;
+}
+
+.tela input {
+  display: run-in;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  padding: 3px;
+}
+
+#loginbtn {
+  border: 0;
+  background-color: #63a2ff;
+  padding: 8px;
+}
+
+#clearbtn {
+  border: 0;
+  background-color: #f67171;
+  padding: 8px;
+}
+
+#loginbtn:hover {
+  color: #ffffff;
+  background-color: #5587d0;
+}
+
+#clearbtn:hover {
+  color: #ffffff;
+  background-color: #c45959;
+}
+
+.deletebtn {
+  text-decoration: none;
+  background-color: #f67171;
+  padding: 8px;
+  color: #000000;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.deletebtn:hover {
+  background-color: #bd4d4d;
+}

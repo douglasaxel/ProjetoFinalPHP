@@ -1,0 +1,14 @@
+{
+    "name": "axel/sistema_escola_infantil",
+    "description": "Um sistema simples para controlar funciona, aluno e material de uma escola infantil",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Douglas Axel",
+            "email": "douglasaxelkjellin@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
