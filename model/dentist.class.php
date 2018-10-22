@@ -1,12 +1,14 @@
 <?php
-class Studant{
-  private $idStudant;
+class Dentist {
+  private $idDentist;
   private $fullName;
   private $birthDate;
   private $rg;
   private $cpf;
   private $turn;
-  private $grade;
+  private $cro;
+  private $login;
+  private $pass;
 
   public function __construct(){}
   public function __destruct(){}
@@ -18,6 +20,6 @@ class Studant{
                   RG: $this->rg
                   CPF: $this->cpf
                   Turno: $this->turn
-                  Classe: $this->grade");
+                  CRO: $this->cro");
   }
 }

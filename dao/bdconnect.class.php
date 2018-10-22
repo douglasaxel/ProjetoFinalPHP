@@ -10,7 +10,7 @@ class BDConnect extends PDO {
     try{
         if(!isset(self::$instance)){
           self::$instance = new
-          BDConnect("mysql:dbname=school;host=localhost","root","");
+          BDConnect("mysql:dbname=database;host=localhost","root","");
         }
         return self::$instance;
     }catch(PDOException $e){

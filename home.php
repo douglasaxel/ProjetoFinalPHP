@@ -6,17 +6,21 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Inicio</title>
     <style>
-      a {
+      div a {
         text-decoration: none;
         color: #000;
+        font-size: 30px;
+        margin: 10px 0;
       }
 
-      a:hover {
+      div a:hover {
         color: #3288fa;
+        font-size: 40px;
       }
 
       li {
         font-size: 25px;
+        list-style: none;
       }
 
       h1 {
@@ -27,21 +31,22 @@
       }
     </style>
   </head>
-  <body style="background-image: url('imgs/loginbg.jpg');">
+  <body>
     <input type="checkbox" id="btnmenu">
     <label for="btnmenu">&#9776;</label>
     <nav class="menu">
       <ul>
-        <li><a href="#">Funcionários</a>
+        <li><a href="home.php">Início</a></li>
+        <li><a href="#">Dentistas</a>
           <ul>
-            <li><a href="register-employer.php">Cadastrar</a></li>
-            <li><a href="list-employer.php">Listar</a></li>
+            <li><a href="register-dentist.php">Cadastrar</a></li>
+            <li><a href="list-dentist.php">Listar</a></li>
           </ul>
         </li>
-        <li><a href="#">Alunos</a>
+        <li><a href="#">Pacientes</a>
           <ul>
-            <li><a href="register-studant.php">Cadastrar</a></li>
-            <li><a href="list-studant.php">Listar</a></li>
+            <li><a href="register-patient.php">Cadastrar</a></li>
+            <li><a href="list-patient.php">Listar</a></li>
           </ul>
         </li>
         <li><a href="#">Materiais</a>
@@ -53,11 +58,11 @@
       </ul>
     </nav>
     <div class="homescreen">
-      <h1>Sistema de gerenciamento de escola</h1>
+      <h1>Sistema de gerenciamento clínica odontológica</h1>
       <ul>
-        <li><a href="list-employer.php">Controle de Funcionários</a></li>
-        <li><a href="list-studant.php">Controle de Alunos</a></li>
-        <li><a href="list-stuff.php">Controle de Materiais</a></li>
+        <li><a href="list-dentist.php">Lista de Dentistas</a></li>
+        <li><a href="list-patient.php">Lista de Pacientes</a></li>
+        <li><a href="list-stuff.php">Lista de Materiais</a></li>
       </ul>
     </div>
   </body>

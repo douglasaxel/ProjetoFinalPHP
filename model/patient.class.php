@@ -1,11 +1,11 @@
 <?php
-class Employer {
-  private $idEmployer;
+class Patient{
+  private $idPatient;
   private $fullName;
   private $birthDate;
   private $rg;
   private $cpf;
-  private $turn;
+  private $phone;
 
   public function __construct(){}
   public function __destruct(){}
@@ -16,6 +16,6 @@ class Employer {
                   Data de Nascimento: $this->birthDate
                   RG: $this->rg
                   CPF: $this->cpf
-                  Turno: $this->turn");
+                  Telefone: $this->phone");
   }
 }

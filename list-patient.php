@@ -2,12 +2,11 @@
 session_start();
 ob_start();
 
-include_once 'dao/stuffdao.class.php';
-include_once 'model/stuff.class.php';
+include_once 'dao/patientdao.class.php';
+include_once 'model/patient.class.php';
 
-$stuffDAO = new StuffDAO();
-$array = $stuffDAO->searchStuff();
-//var_dump($array);
+$pdao = new PatientDAO();
+$array = $pdao->searchPatient();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -46,8 +45,8 @@ $array = $stuffDAO->searchStuff();
     <div class="homescreen">
       <?php
         if(count($array) == 0){
-          echo "<h2>Não há materiais no banco!</h2>";
-          die();
+          echo "<h2>Não há pacientes no banco!</h2>";
+          return;
         }
       ?>
       <form action="" method="post" action="">
@@ -55,10 +54,10 @@ $array = $stuffDAO->searchStuff();
         <select name="filterer" style="width: auto;">
           <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'all') {echo 'selected';}} ?> value="all">Todos</option>
           <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'name') {echo 'selected';}} ?> value="name">Nome</option>
-          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'vendor') {echo 'selected';}} ?> value="birth">Fornecedor</option>
-          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'qtd') {echo 'selected';}} ?> value="rg">Quantidade</option>
-          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'type') {echo 'selected';}} ?> value="cpf">Tipo</option>
-          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'duedate') {echo 'selected';}} ?> value="duedate">Data de vencimento</option>
+          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'birth') {echo 'selected';}} ?> value="birth">Data de nascimento</option>
+          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'rg') {echo 'selected';}} ?> value="rg">RG</option>
+          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'cpf') {echo 'selected';}} ?> value="cpf">CPF</option>
+          <option <?php if (isset($_POST['filter'])) {if ($_POST['filterer'] == 'phone') {echo 'selected';}} ?> value="turn">Telefone</option>
         </select>
         <input type="submit" name="filter" value="Filtrar">
       </form>
@@ -68,7 +67,7 @@ $array = $stuffDAO->searchStuff();
           $search = $_POST['search'];
 
           if (!empty($search)) {
-            $array = $stuffDAO->filter($search, $filterer);
+            $array = $pdao->filter($search, $filterer);
 
             if(count($array) == 0){
               echo "<h3>Sua pesquisa retornou nada!</h3>";
@@ -84,34 +83,34 @@ $array = $stuffDAO->searchStuff();
           <table align="center">
             <thead>
               <th>Nome</th>
-              <th>Fornecedor</th>
-              <th>Quantidade</th>
-              <th>Tipo</th>
-              <th>Data de vencimento</th>
+              <th>Data de nascimento</th>
+              <th>RG</th>
+              <th>CPF</th>
+              <th>Telefone</th>
               <th>Alterar</th>
               <th>Excluir</th>
             </thead>
             <tbody>
             <?php
-             foreach($array as $stuff){
+             foreach($array as $p){
                echo "<tr>";
-                 echo "<td>$stuff->name</td>";
-                 echo "<td>$stuff->vendor</td>";
-                 echo "<td>$stuff->qtd</td>";
-                 echo "<td>$stuff->type</td>";
-                 echo "<td>$stuff->dueDate</td>";
-                 echo "<td><a href='register-stuff.php?id=$stuff->idStuff' id='alterbtn'>Alterar</a></td>";
-                 echo "<td><a href='list-stuff.php?id=$stuff->idStuff' class='deletebtn'>Excluir</a></td>";
+                 echo "<td>$p->fullName</td>";
+                 echo "<td>$p->birthDate</td>";
+                 echo "<td>$p->rg</td>";
+                 echo "<td>$p->cpf</td>";
+                 echo "<td>$p->phone</td>";
+                 echo "<td><a href='register-patient.php?id=$p->idPatient' id='alterbtn'>Alterar</a></td>";
+                 echo "<td><a class='deletebtn' href='list-patient.php?id=$p->idPatient'>Excluir</a></td>";
                echo "</tr>";
              }
             ?>
             </tbody>
             <tfoot>
               <th>Nome</th>
-              <th>Fornecedor</th>
-              <th>Quantidade</th>
-              <th>Tipo</th>
-              <th>Data de vencimento</th>
+              <th>Data de nascimento</th>
+              <th>RG</th>
+              <th>CPF</th>
+              <th>Telefone</th>
               <th>Alterar</th>
               <th>Excluir</th>
             </tfoot>
@@ -121,8 +120,8 @@ $array = $stuffDAO->searchStuff();
     </div>
     <?php
       if (isset($_GET['id'])) {
-        $stuffDAO->deleteStuff($_GET['id']);
-        header("location:list-stuff.php");
+        $pdao->deletePatient($_GET['id']);
+        header("location:list-patient.php");
         unset($_GET['id']);
       }
     ?>

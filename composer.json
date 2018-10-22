@@ -1,12 +1,14 @@
 {
-    "name": "axel/sistema_escola_infantil",
-    "description": "Um sistema simples para controlar funciona, aluno e material de uma escola infantil",
+    "name": "juan_douglasaxel/sistema_clinica_odontologica",
+    "description": "Um sistema simples para controlar uma clínica odontológica",
     "type": "project",
     "license": "GPL",
     "authors": [
         {
             "name": "Douglas Axel",
-            "email": "douglasaxelkjellin@gmail.com"
+            "email": "douglasaxelkjellin@gmail.com",
+            "name": "Juan Correa",
+            "email": "juancorrea161@hotmail.com"
         }
     ],
     "minimum-stability": "dev",

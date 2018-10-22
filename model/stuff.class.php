@@ -5,6 +5,7 @@ class Stuff{
   private $vendor;
   private $qtd;
   private $type;
+  private $dueDate;
 
   public function __construct(){}
   public function __destruct(){}
@@ -14,6 +15,7 @@ class Stuff{
     return nl2br("Nome: $this->name
                   Fornecedor: $this->vendor
                   Quantidade: $this->qtd
-                  Tipo: $this->type");
+                  Tipo: $this->type
+                  Data de vencimento: $this->dueDate");
   }
 }

@@ -10,6 +10,12 @@ html {
   padding: 0;
 }
 
+body {
+  background-image: url("../imgs/loginbg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 /* registry pattern */
 
 form {
@@ -210,8 +216,8 @@ label[for="btnmenu"] {
 
 /* Login */
 
-.tela {
-  background-color: rgba(249, 252, 54, .9);
+/* .tela {
+  background-color: rgba(0, 240, 255, .5);
   width: 300px;
   border-radius: 20px;
   padding: 20px;
@@ -220,17 +226,16 @@ label[for="btnmenu"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 5px 7px #6a6a6a;
+  box-shadow: 5px 7px rgba(0, 0, 0, .7);
 }
 
 .tela input {
-  display: run-in;
   margin: 10px;
   border-radius: 10px;
   font-size: 20px;
   text-align: center;
   padding: 3px;
-}
+} */
 
 #loginbtn {
   border: 0;
@@ -252,6 +257,20 @@ label[for="btnmenu"] {
 #clearbtn:hover {
   color: #ffffff;
   background-color: #c45959;
+}
+
+
+#alterbtn {
+  text-decoration: none;
+  background-color: #fffd61;
+  padding: 8px;
+  color: #000000;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+#alterbtn:hover {
+  background-color: #c4c34e;
 }
 
 .deletebtn {

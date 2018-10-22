@@ -13,13 +13,4 @@ class Patterns{
     $fullName = implode(" ", $array);
     return $fullName;
   }
-
-  public static function checkDate($m, $d, $a){
-    if (checkdate($m, $d, $a)) {
-      $array = array($d, $m, $a);
-      $date = implode('/',$array);
-      return $date;
-    }
-    return "inválida";
-  }
 }
